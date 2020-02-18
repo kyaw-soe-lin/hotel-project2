@@ -1,0 +1,15 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h2>レビューの一覧</h2>
+				<% @reviews.each do |review| %><br>
+					<ul class="list-group">
+						<li class="list-group-item-success">Rating : <%= review.rating %></li>
+						<li class="list-group-item-success"><%= review.name %></li>
+						<li class="list-group-item-success"><%= review.title %></li>
+						<li class="list-group-item-success"><%= review.body %></li>
+					</ul>
+				<% end %>
+		</div>
+	</div>
+</div>

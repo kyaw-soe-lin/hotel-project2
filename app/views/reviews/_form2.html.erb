@@ -1,0 +1,37 @@
+<%= form_with(model:[@hotel,review], local: true,) do |form| %>
+  <% if review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(staff.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div align="left">
+      <div class="field">
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+      </div>
+      <div class="field">
+        <%= form.label :rating %><br>
+        <%= form.number_field :rating %>
+      </div>
+
+      <div class="field">
+        <%= form.label :title %><br>
+        <%= form.text_field :title %>
+      </div>
+      <div class="field">
+        <%= form.label :body %><br>
+        <%= form.text_area :body %>
+      </div>
+       <span>Hotel Id</span><br>
+      <%= form.text_field :hotel_id,value: @hotel.id %>
+      <div class="actions"><br>
+        <%= form.submit %>
+      </div>
+    </div>
+<% end %>

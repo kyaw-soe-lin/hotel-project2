@@ -1,0 +1,62 @@
+<%= form_with(model:[@hotel,review], local: true,) do |form| %>
+  <% if review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(staff.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+      <ul>
+      <% review.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+            <form action="" class="form-horizontal">
+              <fieldset id="account">
+                <div class="form-group">
+                  <label for="Name"><%= form.label :name %></label>
+                  <input type="text" placeholder="Name" id="Name" class="form-control" <%= form.text_field :name %> 
+                </div>
+              </fieldset>
+            </form>
+            <form action="" class="form-horizontal">
+              <fieldset id="account">
+                <div class="form-group">
+                  <label for="Rating"><%= form.label :rating %></label>
+                  <input type="text" placeholder="Rating" id="Rating" class="form-control" <%= form.number_field :rating %> 
+                </div>
+              </fieldset>
+            </form>
+            <form action="" class="form-horizontal">
+              <fieldset id="account">
+                <div class="form-group">
+                  <label for="Title"><%= form.label :title %></label>
+                  <input type="text" placeholder="Title" id="Title" class="form-control" <%= form.text_field :title %>
+                </div>
+              </fieldset>
+            </form>
+            <form action="" class="form-horizontal">
+              <fieldset id="account">
+                <div class="form-group">
+                  <label for="Body"><%= form.label :body %></label>
+                  <input type="text" placeholder="Body" id="Body" class="form-control" <%= form.text_area :body %>
+                </div>
+              </fieldset>
+            </form>
+            <form action="" class="form-horizontal">
+              <fieldset id="account">
+                <div class="form-group">
+                    <span>Hotel Id</span><br>
+                        <%= form.text_field :hotel_id,value: @hotel.id %>
+                        <div class="actions"><br>
+                          <%= form.submit %>
+                        </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+    </div>
+<% end %>

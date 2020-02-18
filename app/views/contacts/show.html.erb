@@ -1,0 +1,27 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<h2>問い合わせ</h2>
+			<div class="row">
+				<div class="col-md-12">
+					<ul class="list-group">
+						<li class="list-group-item-success">Name : <%= @contact.name %></li><br>
+						<li class="list-group-item-success">E-mail Address : <%= @contact.email %></li><br>
+						<li class="list-group-item-success">
+							<span>性別 : </span>
+							 <% if @contact.gender == 0 %>
+							  <span> 男 </span>
+							 <% else %>
+							  <span> 女 </span>
+							 <%end%>
+						</li><br>
+						<li class="list-group-item-success">Body : <%= @contact.body %></li>
+					</ul>
+				</div>
+		    </div>
+		</div>
+
+		<div class="col-md-3">
+		</div>
+	</div>			
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<h1> <%= @hotel.name %> </h1>
+		</div>
+	</div> 
+	<div class="row">
+		<div class="col-4">
+			<img src= <%= @hotel.picture.url %> class="img-fluid" >
+		</div>
+		
+	    <div class="col-8">
+			<h5 class="mb-3" > 住所地　: <%= @hotel.prefecture.name %> </h5>
+			<h4 class="mb-5" > <%= @hotel.description %></h4>
+		</div>
+
+	</div>
+	<div class="row">
+	    <div class="col-md-12">
+	          <ul class="list-group">
+	            <li class="list-group-item-success">Name : <%= @review.name %></li>
+	            <li class="list-group-item-success">Rating : <%= @review.rating %></li>
+	            <li class="list-group-item-success">Title : <%= @review.title %></li>
+	            <li class="list-group-item-success">Body : <%= @review.body %></li>
+	          </ul>
+	    </div>
+    </div>
+</div> 

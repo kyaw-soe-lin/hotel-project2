@@ -1,0 +1,21 @@
+
+
+<div class="container">
+	<div class="row">
+		<% @hotels.each do |hotel| %>
+		   <div class="col-md-4">
+		   	    <div class="card" style="width: 18rem;">
+			   	 	<%= image_tag hotel.picture.url, class: "card-img-top" %>
+			   	 	<div class="card-body">
+				   	 	<h5 class="card-title"><%= hotel.name %></h5>
+				   	 	<p class="card-text"> 住所地　: <%= hotel.address %><br>
+				   	 		<%= hotel.description %>
+				   	 	</p>
+			   	 	    <%= link_to 'ホテルの詳細を見る',hotel_path(hotel), class: "btn btn-primary" %><br>
+			   	 	    <a href="<%= hotel_path(hotel) %>" class="btn btn-success"> レビーを見る </a>
+				    </div>
+                </div>
+		    </div>
+		<%end%>
+    </div>
+ </div>

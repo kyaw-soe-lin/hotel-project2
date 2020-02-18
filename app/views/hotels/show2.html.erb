@@ -1,0 +1,8 @@
+<h1>ホテル詳細ページ</h1>
+  <p><%= @hotel.name %></p>
+  <p><%= @hotel.address %></p>
+  <p><%= @hotel.description %></p>
+  <div class="col-md-9">
+    <%= image_tag(@hotel.picture_url, width: '30%') if @hotel.picture.present? %>
+  </div>
+
